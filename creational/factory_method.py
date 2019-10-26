@@ -1,3 +1,8 @@
+"""
+    O Método de Fábrica é um padrão de design criacional que fornece uma 
+    interface para criar objetos em uma superclasse, mas permite que as 
+    subclasses alterem o tipo de objeto que será criado.
+"""
 from abc import ABC, abstractmethod
 
 #===========================================Definição de classes abstratas

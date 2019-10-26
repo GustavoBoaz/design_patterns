@@ -1,3 +1,8 @@
+"""
+    Singleton é um padrão de design criacional que permite garantir que uma
+    classe tenha apenas uma instância, enquanto fornece um ponto de acesso
+    global a essa instância.
+"""
 #===========================================Definição de classes Singleton
 class Singleton(object):
     _instance = None
@@ -25,23 +30,23 @@ class ProductSingleton(object):
     
     @property
     def iten(self) -> None:
-        print("Getting: {}".format(self._value))
+        print("Getting value: {}".format(self._value))
         return self._value
 
     @iten.setter
     def iten(self, value) -> None:
-        print("Setting: {}".format(value))
+        print("Setting value: {}".format(value))
         self._value = value
 
     @iten.deleter
     def iten(self):
-        print("Deleting: {}".format(self._value))
+        print("Deleting value: {}".format(self._value))
         del self._value
 #=====================================================Definição do Cliente
 def main_s():
     while True:
         try:
-            option = int(input("Criar Singleton: Apartir de Classe [1] | Apartir de Metodo [2]  | Exit[0]: "))
+            option = int(input("Criar Singleton: Apartir de Classe [1] | Apartir de Decorador [2]  | Exit[0]: "))
             if(option == 1):
                 instancia0 = Singleton()
                 print("Instancia0 com Valor: {}".format(str(instancia0._var)))

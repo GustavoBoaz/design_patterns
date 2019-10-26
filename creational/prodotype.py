@@ -1,3 +1,7 @@
+"""
+    Prototype é um padrão de design criacional que permite copiar objetos
+    existentes sem tornar seu código dependente de suas classes.
+"""
 from abc import ABC, abstractmethod
 
 #===========================================Definição de classes abstratas
