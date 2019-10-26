@@ -1,6 +1,30 @@
 """
     Abstract Factory é um padrão de design criacional que permite produzir
     famílias de objetos relacionados sem especificar suas classes concretas.
+
+    Como Implementar:
+    
+    1.  Mapeie uma matriz de tipos de produtos distintos versus variantes
+        desses produtos.
+
+    2.  Declare interfaces abstratas do produto para todos os tipos de produtos.
+        Em seguida, faça com que todas as classes de produtos concretas
+        implementem essas interfaces.
+
+    3.  Declare a interface abstrata de fábrica com um conjunto de métodos de
+        criação para todos os produtos abstratos.
+
+    4.  Implemente um conjunto de classes de fábrica de concreto, uma para cada
+        variante de produto.
+
+    5.  Crie o código de inicialização de fábrica em algum lugar do aplicativo.
+        Ele deve instanciar uma das classes de fábrica de concreto, dependendo da
+        configuração do aplicativo ou do ambiente atual. Passe esse objeto de
+        fábrica para todas as classes que constroem produtos.
+
+    6.  Examine o código e encontre todas as chamadas diretas para os construtores
+        de produtos. Substitua-os por chamadas para o método de criação apropriado
+        no objeto de fábrica.
 """
 from abc import ABC, abstractmethod
 

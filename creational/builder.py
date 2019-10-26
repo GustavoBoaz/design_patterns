@@ -2,6 +2,39 @@
     O Builder é um padrão de design criacional que permite construir objetos
     complexos passo a passo. O padrão permite produzir diferentes tipos e
     representações de um objeto usando o mesmo código de construção.
+
+    Como Implementar:
+
+    1.  Certifique-se de definir claramente as etapas comuns de construção
+        para criar todas as representações de produtos disponíveis. Caso
+        contrário, você não poderá prosseguir com a implementação do padrão.
+
+    2.  Declare estas etapas na interface do construtor base.
+
+    3.  Crie uma classe de construtor concreto para cada uma das representações
+        do produto e implemente suas etapas de construção.
+
+        Não se esqueça de implementar um método para buscar o resultado da
+        construção. A razão pela qual esse método não pode ser declarado dentro
+        da interface do construtor é que vários construtores podem construir
+        produtos que não possuem uma interface comum. Portanto, você não sabe
+        qual seria o tipo de retorno para esse método. No entanto, se você
+        estiver lidando com produtos de uma única hierarquia, o método de busca
+        poderá ser adicionado com segurança à interface base.
+
+    4.  Pense em criar uma classe de diretor. Pode encapsular várias maneiras
+        de construir um produto usando o mesmo objeto construtor.
+
+    5.  O código do cliente cria os objetos construtor e diretor. Antes do início
+        da construção, o cliente deve passar um objeto construtor para o diretor.
+        Normalmente, o cliente faz isso apenas uma vez, através de parâmetros do
+        construtor do diretor. O diretor usa o objeto construtor em todas as construções
+        posteriores. Existe uma abordagem alternativa, na qual o construtor é
+        passado diretamente para o método de construção do diretor.
+
+    6.  O resultado da construção pode ser obtido diretamente do diretor apenas se
+        todos os produtos seguirem a mesma interface. Caso contrário, o cliente deve
+        buscar o resultado do construtor.
 """
 from abc import ABC, abstractmethod
 from typing import Any

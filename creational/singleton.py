@@ -2,6 +2,24 @@
     Singleton é um padrão de design criacional que permite garantir que uma
     classe tenha apenas uma instância, enquanto fornece um ponto de acesso
     global a essa instância.
+
+    COMO IMPLEMENTAR:
+
+    1.  Adicione um campo estático privado à classe para armazenar a instância
+        singleton.
+
+    2.  Declare um método público de criação estática para obter a instância
+        singleton.
+
+    3.  Implemente “inicialização lenta” dentro do método estático. Ele deve
+        criar um novo objeto em sua primeira chamada e colocá-lo no campo estático.
+        O método sempre deve retornar essa instância em todas as chamadas subseqüentes.
+
+    4.  Torne o construtor da classe privado. O método estático da classe ainda
+        poderá chamar o construtor, mas não os outros objetos.
+
+    5.  Passe o código do cliente e substitua todas as chamadas diretas ao construtor
+        do singleton pelas chamadas ao seu método de criação estático.
 """
 #===========================================Definição de classes Singleton
 class Singleton(object):
