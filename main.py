@@ -6,6 +6,7 @@ from creational.singleton import main_s
 
 from structure.adapter import main_a
 from structure.bridge import main_b
+from structure.composite import main_c
 
 def main():
     #main_fm()
@@ -14,7 +15,8 @@ def main():
     #main_p()
     #main_s()
     #main_a()
-    main_b()
+    #main_b()
+    #main_c()
 
 if __name__ == '__main__':
     main()
